@@ -47,7 +47,7 @@ metadata:
     operators.operatorframework.io/builder: operator-sdk-v1.28.1
     operators.operatorframework.io/project_layout: ansible.sdk.operatorframework.io/v1
     nss.operator.ibm.com/managed-operators: ibm-lakehouse
-    containerImage: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator@sha256:743bb4a8ab78fc9b264f5e27fb78db74a673ace365196e8b501dbeb7611e15f3
+    containerImage: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator@sha256:fee33985e3a17a81fd47f25871b97a6c13d0f503a36af81ab1b8fd54491ea0ca
     olm.skipRange: '>=1.0.0 <6.1.0'
     operators.openshift.io/infrastructure-features: '["Disconnected"]'
   name: ibm-lakehouse-operator.v6.1.0
@@ -278,7 +278,7 @@ spec:
                   value: '3'
                 - name: ANSIBLE_FORKS
                   value: '5'
-                image: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator@sha256:743bb4a8ab78fc9b264f5e27fb78db74a673ace365196e8b501dbeb7611e15f3
+                image: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator@sha256:fee33985e3a17a81fd47f25871b97a6c13d0f503a36af81ab1b8fd54491ea0ca
                 livenessProbe:
                   httpGet:
                     path: /healthz
