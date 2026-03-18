@@ -829,5 +829,7 @@ spec:
     name: IBM
   version: 6.1.0
   relatedImages:
-  - name: ''
-    image: ''
+  - name: ibm-lakehouse-operator-catalog
+    image: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator-catalog@sha256:ae1d5b04b903a0ed06b0cc07dd48248b7b0958e2fb3e47ceb596e9f26cc0c128
+  - name: ibm-lakehouse-operator-bundle
+    image: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator-bundle@sha256:98a84bdfb678a7b13899b01ed610e8612735005417e1d26785b3b1b5cc9c6bcb
