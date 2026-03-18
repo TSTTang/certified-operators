@@ -72,7 +72,7 @@ spec:
                     - license
                   type: object
                 version:
-                  default: 2.3.1
+                  default: 2.3.3
                   type: string
                 install_ccs_dependency:
                   default: false
@@ -120,8 +120,6 @@ spec:
                       description: Additional DNS names to include in the GFS mTLS certificate.
                       items:
                         type: string
-                enable_opensearch:
-                  type: boolean
                 enable_watsonx_platform:
                   default: false
                   type: boolean

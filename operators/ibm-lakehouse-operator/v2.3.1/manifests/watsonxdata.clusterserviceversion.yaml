@@ -10,6 +10,12 @@ metadata:
     description: IBM watsonx.data operator
     operators.operatorframework.io/internal-objects: '["wxdaddons.watsonxdata.ibm.com","wxdengines.watsonxdata.ibm.com","wxds.watsonxdata.ibm.com"]'
     operators.operatorframework.io/operator-type: non-standalone
+    com.redhat.openshift.versions: v4.12-v4.16
+    certified: 'true'
+    repository: https://github.com/IBM/ibm-open-lakehouse-operator
+    support: IBM
+    capabilities: Seamless Upgrades
+    categories: Database,AI/Machine Learning
     alm-examples: "[\n  {\n    \"apiVersion\": \"watsonxdata.ibm.com/v1\",\n    \"\
       kind\": \"Wxd\",\n    \"metadata\": {\n      \"labels\": {\n        \"app.kubernetes.io/created-by\"\
       : \"ibm-lakehouse\",\n        \"app.kubernetes.io/instance\": \"lakehouse\"\
@@ -17,7 +23,7 @@ metadata:
       : \"wxd\",\n        \"app.kubernetes.io/part-of\": \"ibm-lakehouse\"\n     \
       \ },\n      \"name\": \"lakehouse\"\n    },\n    \"spec\": {\n      \"blockStorageClass\"\
       : \"standard\",\n      \"description\": \"IBM Lakehouse\",\n      \"shutdown\"\
-      : \"false\",\n      \"version\": \"2.3.1\",\n      \"license\": {\n        \"\
+      : \"false\",\n      \"version\": \"2.3.3\",\n      \"license\": {\n        \"\
       accept\": false\n      }\n    }\n  },\n  {\n    \"apiVersion\": \"watsonxdata.ibm.com/v1\"\
       ,\n    \"kind\": \"WxdAddon\",\n    \"metadata\": {\n      \"labels\": {\n \
       \       \"app.kubernetes.io/instance\": \"wxdAddon\",\n        \"app.kubernetes.io/managed-by\"\
@@ -42,15 +48,14 @@ metadata:
       ,\n      \"scaleConfig\": \"small\",\n      \"shutdown\": \"false\",\n     \
       \ \"type\": \"presto\",\n      \"zenServiceInstanceId\": 1234,\n      \"license\"\
       : {\n        \"accept\": false\n      }\n    }\n  }\n]"
-    capabilities: Seamless Upgrades
     createdAt: '2023-05-12T21:57:48Z'
     operators.operatorframework.io/builder: operator-sdk-v1.28.1
     operators.operatorframework.io/project_layout: ansible.sdk.operatorframework.io/v1
     nss.operator.ibm.com/managed-operators: ibm-lakehouse
-    containerImage: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator@sha256:fee33985e3a17a81fd47f25871b97a6c13d0f503a36af81ab1b8fd54491ea0ca
-    olm.skipRange: '>=1.0.0 <6.1.0'
+    containerImage: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator@sha256:12e846dca51cd0db7141a694d6d4b09a2ebae1d4cdb04fb00df22de6873149c7
+    olm.skipRange: '>=1.0.0 <6.3.0'
     operators.openshift.io/infrastructure-features: '["Disconnected"]'
-  name: ibm-lakehouse-operator.v6.1.0
+  name: ibm-lakehouse-operator.v6.3.0
   namespace: placeholder
 spec:
   apiservicedefinitions: {}
@@ -61,7 +66,7 @@ spec:
 
         License
 
-        You must read and accept the license terms to install the software(https://ibm.biz/BdpdBF).'
+        You must read and accept the license terms to install the software(https://ibm.biz/BdpzEx).'
       kind: WxdAddon
       name: wxdaddons.watsonxdata.ibm.com
       version: v1
@@ -72,7 +77,7 @@ spec:
       - displayName: License type
         description: 'Select the license that you purchased.
 
-          License agreement https://ibm.biz/BdpdBF must be accepted during install
+          License agreement https://ibm.biz/BdpzEx must be accepted during install
           of this product (required).'
         path: license.license
         x-descriptors:
@@ -87,7 +92,7 @@ spec:
 
         License
 
-        You must read and accept the license terms to install the software(https://ibm.biz/BdpdcU).'
+        You must read and accept the license terms to install the software(https://ibm.biz/BdpzEx).'
       kind: WxdAddonPremium
       name: wxdaddonpremiums.watsonxdata.ibm.com
       version: v1
@@ -98,7 +103,7 @@ spec:
       - displayName: License type
         description: 'Select the license that you purchased.
 
-          License agreement https://ibm.biz/BdpdcU must be accepted during install
+          License agreement https://ibm.biz/BdpzEx must be accepted during install
           of this product (required).'
         path: license.license
         x-descriptors:
@@ -113,7 +118,7 @@ spec:
 
         License
 
-        You must read and accept the license terms to install the software(https://ibm.biz/BdpdBF).'
+        You must read and accept the license terms to install the software(https://ibm.biz/BdpzEx).'
       kind: WxdEngine
       name: wxdengines.watsonxdata.ibm.com
       version: v1
@@ -125,7 +130,7 @@ spec:
 
         License
 
-        You must read and accept the license terms to install the software(https://ibm.biz/BdpdBF).'
+        You must read and accept the license terms to install the software(https://ibm.biz/BdpzEx).'
       kind: Wxd
       name: wxds.watsonxdata.ibm.com
       version: v1
@@ -155,16 +160,16 @@ spec:
     \ up persistent storage\n4. Set up project on Red Hat&reg; OpenShift&reg; Container\
     \ Platform cluster.\n5. Update global image pull secret\n6. Mirror image to a\
     \ private container registry\n\n## Resources Required\n\nVarious Resources Required\n\
-    \n## Installing\nFor instructions to install IBM&reg; watsonx.data 2.3.1, contact\
-    \ your local sales representative.\nOne of our technical team members will guide\
-    \ you through the installation process.\n\n## Configuration\n  N/A\n### Limitations\n\
-    1. When dealing with character data, case sensitivity can be important when searching\
-    \ for specific matches or patterns.\nHowever, not all databases and query engines\
-    \ behave in the same way.\nSome are case insensitive by default, while others\
-    \ are not.\nThis can lead to unexpected results if the case of the data is not\
-    \ taken into account.\n\n### SecurityContextConstraints Requirements\nIBM&reg;\
-    \ watsonx.data supports several different mechanisms for securing your environment\
-    \ and your data.\nFIPS can also be enabled.\n"
+    \n## Installing\nFor instructions to install IBM&reg; watsonx.data 2.3.1 patch\
+    \ 2, contact your local sales representative.\nOne of our technical team members\
+    \ will guide you through the installation process.\n\n## Configuration\n  N/A\n\
+    ### Limitations\n1. When dealing with character data, case sensitivity can be\
+    \ important when searching for specific matches or patterns.\nHowever, not all\
+    \ databases and query engines behave in the same way.\nSome are case insensitive\
+    \ by default, while others are not.\nThis can lead to unexpected results if the\
+    \ case of the data is not taken into account.\n\n### SecurityContextConstraints\
+    \ Requirements\nIBM&reg; watsonx.data supports several different mechanisms for\
+    \ securing your environment and your data.\nFIPS can also be enabled.\n"
   displayName: IBM watsonx.data
   icon:
   - base64data: PHN2ZyBpZD0id2F0c29ueC5kYXRhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMzIgMzIiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuc3RvcDEgewogICAgICAgIHN0b3AtY29sb3I6ICMwOGJkYmE7CiAgICAgIH0KCiAgICAgIC5zdG9wMiB7CiAgICAgICAgc3RvcC1jb2xvcjogIzBmNjJmZTsKICAgICAgfQoKICAgICAgLndhdmVzIHsKICAgICAgICBmaWxsOiAjMDAxZDZjOwogICAgICB9CgogICAgICBAbWVkaWEgKHByZWZlcnMtY29sb3Itc2NoZW1lOiBkYXJrKSB7CiAgICAgICAgLnN0b3AxIHsKICAgICAgICAgIHN0b3AtY29sb3I6ICMzZGRiZDk7CiAgICAgICAgfQoKICAgICAgICAuc3RvcDIgewogICAgICAgICAgc3RvcC1jb2xvcjogIzQ1ODlmZjsKICAgICAgICB9CgogICAgICAgIC53YXZlcyB7CiAgICAgICAgICBmaWxsOiAjZjRmNGY0OwogICAgICAgIH0KICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iNjc4cGowdnV5YSIgeDE9IjQuMTI1IiB5MT0iMjIuMzMiIHgyPSI0LjEyNSIgeTI9IjEzIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iLjIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImU1aDR1djUwamIiIHgxPSItMjg5Mi41MTgiIHkxPSItMTgzOS44MjUiIHgyPSItMjg5Mi41MTgiIHkyPSItMTg0Ny4yMjQiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoLjY5NSAwIDAgLjkxNCAyMDIwLjAwMyAxNzA5LjgzKSIgeGxpbms6aHJlZj0iIzY3OHBqMHZ1eWEiLz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibHBzZWt2YTQ4ZCIgeDE9IjAiIHkxPSIzMiIgeDI9IjMyIiB5Mj0iMCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9Ii4xIiBzdG9wLWNvbG9yPSIjM2RkYmQ5Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjkiIHN0b3AtY29sb3I9IiM0NTg5ZmYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bWFzayBpZD0ieDYweTJpZjQ5YyIgeD0iMCIgeT0iMCIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBtYXNrVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHBhdGggZD0iTTI5LjAwOSA5Ljk5NHYxMWgtMnYtMTAuNDJsLTExLTYuNDItMTEgNi40MnYxMS40NWgtMlY5Ljk5NGExIDEgMCAwIDEgLjUtLjg2bDEyLTdjLjE1LS4wOS4zMy0uMTQuNS0uMTRzLjM1LjA1LjUuMTRsMTIgN2ExIDEgMCAwIDEgLjUuODZ6IiBzdHlsZT0iZmlsbDojZmZmIi8+CiAgICAgIDxwYXRoIHN0eWxlPSJmaWxsOnVybCgjNjc4cGowdnV5YSkiIGQ9Ik0yLjI1IDEzaDMuNzQ5djkuMzNIMi4yNXoiLz4KICAgICAgPHBhdGggZD0iTTMuMDI2IDI1LjAwNHYtMmE2Ljk5NyA2Ljk5NyAwIDAgMCA2LjA4OS0zLjU2MWwxLjc0Mi45ODFhOSA5IDAgMCAxLTcuODMxIDQuNTc5ek00LjA2NiAyOS45OTRoLTEuMDZ2LTJoMS4wNmMyLjk4NiAwIDUuNzc5LTEuMTc1IDcuODY1LTMuMzA5bDEuNDMgMS4zOTdhMTIuODk4IDEyLjg5OCAwIDAgMS05LjI5NSAzLjkxMnoiIHN0eWxlPSJmaWxsOiNmZmYiLz4KICAgICAgPHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoLTExMi4yNjYgOS4wMjcgMjQuMzEzKSIgc3R5bGU9ImZpbGw6dXJsKCNlNWg0dXY1MGpiKSIgZD0iTTMuNTcxIDIwLjkzMWgxMC45MTN2Ni43NjRIMy41NzF6Ii8+CiAgICAgIDxwYXRoIHN0eWxlPSJmaWxsOiNmZmYiIGQ9Ik04LjAxOCAxMmgydjJoLTJ6TTIwLjAxOCAxNmgydjJoLTJ6TTE1LjAxMyA5aDJ2MmgtMnpNMTMuMDI4IDE0aDJ2MmgtMnpNMjIuMDI4IDEyaDJ2MmgtMnoiLz4KICAgIDwvbWFzaz4KICA8L2RlZnM+CiAgPGcgc3R5bGU9Im1hc2s6dXJsKCN4NjB5MmlmNDljKSI+CiAgICA8cGF0aCBzdHlsZT0iZmlsbDp1cmwoI2xwc2VrdmE0OGQpIiBkPSJNMCAwaDMydjMySDB6Ii8+CiAgPC9nPgogIDxwYXRoIGNsYXNzPSJ3YXZlcyIgZD0iTTI1LjAyOCAyNS4wMDRoLTEuMjUyYy00LjEzOCAwLTguNzQ4LTIuODc2LTguNzQ4LTcuMDA0aDJjMCAyLjgxOCAzLjYyOCA1LjAwNCA2Ljc0OCA1LjAwNGgxLjI1MnYyeiIgLz4KICA8cGF0aCBjbGFzcz0id2F2ZXMiIGQ9Ik0yNS4wMjggMjkuOTk0aC0yLjA1MmMtNy4wMjQgMC0xMi45NTktNS40OTUtMTIuOTU5LTExLjk5OGgyYzAgNS40MTkgNS4wMTkgOS45OTggMTAuOTU5IDkuOTk4aDIuMDUydjJ6TTI3LjAzOSAyMi45OTloMnYyaC0yek0yNy4wMTkgMjcuOTk5aDJ2MmgtMnoiIC8+Cjwvc3ZnPg==
@@ -198,7 +203,7 @@ spec:
                 productID: 9e2a4571085f42f8af674f707fab0b75
                 productMetric: FREE
                 productName: IBM watsonx.data
-                productVersion: 6.1.0
+                productVersion: 6.3.0
               labels:
                 app.kubernetes.io/component: ibm-lakehouse
                 app.kubernetes.io/instance: ibm-lakehouse
@@ -278,7 +283,7 @@ spec:
                   value: '3'
                 - name: ANSIBLE_FORKS
                   value: '5'
-                image: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator@sha256:fee33985e3a17a81fd47f25871b97a6c13d0f503a36af81ab1b8fd54491ea0ca
+                image: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator@sha256:12e846dca51cd0db7141a694d6d4b09a2ebae1d4cdb04fb00df22de6873149c7
                 livenessProbe:
                   httpGet:
                     path: /healthz
@@ -827,7 +832,7 @@ spec:
   maturity: alpha
   provider:
     name: IBM
-  version: 6.1.0
+  version: 6.3.0
   relatedImages:
   - name: ibm-lakehouse-operator
-    image: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator@sha256:fee33985e3a17a81fd47f25871b97a6c13d0f503a36af81ab1b8fd54491ea0ca
+    image: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator@sha256:12e846dca51cd0db7141a694d6d4b09a2ebae1d4cdb04fb00df22de6873149c7

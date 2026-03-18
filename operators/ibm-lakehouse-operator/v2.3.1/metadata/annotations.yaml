@@ -4,8 +4,8 @@ annotations:
   com.redhat.openshift.versions: v4.12-v4.18
   containerImage: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator:6.0.0
   operators.openshift.io/infrastructure-features: '["disconnected"]'
-  operators.operatorframework.io.bundle.channel.default.v1: v6.1
-  operators.operatorframework.io.bundle.channels.v1: v6.1
+  operators.operatorframework.io.bundle.channel.default.v1: v6.3
+  operators.operatorframework.io.bundle.channels.v1: v6.3
   operators.operatorframework.io.bundle.manifests.v1: manifests/
   operators.operatorframework.io.bundle.mediatype.v1: registry+v1
   operators.operatorframework.io.bundle.metadata.v1: metadata/
