@@ -834,5 +834,5 @@ spec:
     name: IBM
   version: 6.3.0
   relatedImages:
-  - name: ibm-lakehouse-operator
-    image: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator@sha256:a3ce3dd39ff0db3e2167e3a8618546dae15283be067ca11d71e126d4ab9deae1
+  - name: ibm-lakehouse-operator:2.3.1-3535-20260324-033751-onprem-v2.3.x-RHCERTonprem-v2.3.x-amd64
+    image: cp.stg.registry.marketplace.redhat.com/cp/ibm-lakehouse-operator:2.3.1-3535-20260324-033751-onprem-v2.3.x-RHCERTonprem-v2.3.x-amd64
