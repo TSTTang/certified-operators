@@ -835,4 +835,4 @@ spec:
   version: 6.3.0
   relatedImages:
   - name: ibm-lakehouse-operator
-    image: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator@sha256:12e846dca51cd0db7141a694d6d4b09a2ebae1d4cdb04fb00df22de6873149c7
+    image: registry.marketplace.redhat.com/cpopen/ibm-lakehouse-operator@sha256:a3ce3dd39ff0db3e2167e3a8618546dae15283be067ca11d71e126d4ab9deae1
