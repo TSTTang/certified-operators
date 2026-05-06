@@ -28,3 +28,6 @@ tests:
 
 allowed_bundle_registries:
   - registry.connect.redhat.com
+index_image:
+  pending_repository: "registry.redhat.io/redhat/redhat-operator-index"
+
