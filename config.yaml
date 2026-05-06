@@ -31,3 +31,4 @@ allowed_bundle_registries:
 index_image:
   pending_repository: "registry.redhat.io/redhat/redhat-operator-index"
   public_repository_mirror: "registry.redhat.io/redhat/redhat-operator-index"
+  repository: "registry.redhat.io/redhat/redhat-operator-index"
